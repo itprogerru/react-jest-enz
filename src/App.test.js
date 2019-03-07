@@ -65,5 +65,22 @@ test ('clicking button incremets counter display', () => {
   //find display adn test value
   const counterDisplay = findByTestAttr(wrapper,'counter-display');
 
+  // проверка на совпадение числа
   expect(counterDisplay.text()).toContain(counter+1)
+});
+
+test ('clicking button dicrement counter display', () => {
+  const counter = 7;
+  const wrapper = setup(null,{ counter });
+
+  //find button and click
+  const button = findByTestAttr(wrapper, 'decrement-button');
+  button.simulate('click');
+  wrapper.update();
+
+  //find display adn test value
+  const counterDisplay = findByTestAttr(wrapper,'counter-display');
+
+  // проверка на совпадение числа
+  expect(counterDisplay.text()).toContain(counter-1)
 });

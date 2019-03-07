@@ -20,6 +20,12 @@ class App extends Component {
         >
           click
         </button>
+        <button
+          data-test="decrement-button"
+          onClick={()=>this.setState({counter: this.state.counter - 1})}
+        >
+          click -1
+        </button>
       </div>
     );
   }
